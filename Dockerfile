@@ -18,5 +18,5 @@ RUN rm -rf /var/lib/apt/lists/*
 
 RUN dotnet tool install -g dotnet-ef
 
-RUN groupadd -r dotnet && useradd --no-log-init -r -g dotnet dotnet
+RUN groupadd -r dotnet && adduser --no-log-init -r -g dotnet dotnet && mdkir /home/dotnet && chown dotnet:dotnet /home/dotnet
 USER dotnet
