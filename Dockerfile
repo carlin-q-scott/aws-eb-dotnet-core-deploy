@@ -17,3 +17,6 @@ RUN apt-get autoremove -y
 RUN rm -rf /var/lib/apt/lists/*
 
 RUN dotnet tool install -g dotnet-ef
+
+RUN groupadd -r dotnet && useradd --no-log-init -r -g dotnet dotnet
+USER dotnet
