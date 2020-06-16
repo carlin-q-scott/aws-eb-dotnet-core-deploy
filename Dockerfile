@@ -6,7 +6,7 @@ RUN apt-get install -y build-essential
 RUN apt-get remove -y python
 RUN apt-get -y autoremove
 RUN apt-get install -y python3-pip
-RUN pip3 install awsebcli --upgrade
+RUN pip3 install awsebcli==3.10.0 --upgrade
 
 RUN apt-get install -y zip jq
 ENV PATH=$PATH:/root/.dotnet/tools
@@ -16,4 +16,4 @@ RUN apt-get remove -y build-essential apt-utils
 RUN apt-get autoremove -y
 RUN rm -rf /var/lib/apt/lists/*
 
-RUN dotnet tool install -g dotnet-ef
+RUN dotnet tool install -g --version 2.2 dotnet-ef
