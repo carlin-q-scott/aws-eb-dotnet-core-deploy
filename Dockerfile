@@ -15,3 +15,5 @@ RUN dotnet tool install -g Amazon.ElasticBeanstalk.Tools
 RUN apt-get remove -y build-essential apt-utils
 RUN apt-get autoremove -y
 RUN rm -rf /var/lib/apt/lists/*
+
+RUN dotnet tool install -g dotnet-ef
