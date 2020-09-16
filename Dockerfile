@@ -5,6 +5,7 @@ RUN apt-get install -y apt-utils
 RUN apt-get install -y build-essential
 RUN apt-get remove -y python
 RUN apt-get -y autoremove
+ENV LANG="en_US.UTF-8" LC_COLLATE="en_US.UTF-8"
 RUN apt-get install -y python3-pip python3-setuptools
 RUN pip3 install awsebcli --upgrade
 
