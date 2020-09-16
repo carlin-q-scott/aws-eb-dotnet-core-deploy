@@ -5,7 +5,7 @@ RUN apt-get install -y apt-utils
 RUN apt-get install -y build-essential
 RUN apt-get remove -y python
 RUN apt-get -y autoremove
-RUN apt-get install -y python3-pip
+RUN apt-get install -y python3-pip python3-setuptools
 RUN pip3 install awsebcli --upgrade
 
 RUN apt-get install -y zip jq
