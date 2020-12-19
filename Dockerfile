@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk
+FROM mcr.microsoft.com/dotnet/sdk:3.1
 
 RUN apt-get -o Acquire::Max-FutureTime=86400 update
 RUN apt-get install -y apt-utils
