@@ -1,0 +1,24 @@
+name: aws-eb-dotnet-core-deploy
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build . --tag carlin/aws-eb-dotnet-core-deploy:latest --tag carlin/aws-eb-dotnet-core-deploy:5.0
+    - name: Publish the Docker image
+      with:
+        DockerHubApiKey: ${{ secrets.DockerHubApiKey }}
+      run: |
+        docker login --password-stdin --username 
+        docker push --all-tags
